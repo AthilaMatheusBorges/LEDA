@@ -41,8 +41,16 @@ public class RepositorioProdutoNaoPerecivelArray {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int indice = -1;
+		boolean achou = false;
+		while(!achou && indice < produtos.length) {
+			indice += 1;
+			if(produtos[indice].getCodigo() == codigo) {
+				achou = true;
+			}
+		}
+		return indice;
+		//throw new UnsupportedOperationException("Not implemented yet!");
 	}
 
 	/**

@@ -17,7 +17,7 @@ public class RepositorioProdutoArrayList {
 	 * A estrutura onde os produtos sao mantidos. Voce nao precisa se preocupar
 	 * por enquanto com o uso de generics em ArrayList.
 	 */
-	private ArrayList produtos;
+	private ArrayList<Produto> produtos;
 
 	/**
 	 * A posicao do ultimo elemento inserido no array de produtos. o valor
@@ -40,8 +40,16 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	private int procurarIndice(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int indice = -1;
+		boolean achou = false;
+		while(!achou && indice < produtos.size()) {
+			indice += 1;
+			if(produtos.get(indice).getCodigo() == codigo) {
+				achou = true;
+			}
+		}
+		return indice;
+		//throw new UnsupportedOperationException("Not implemented yet!");
 	}
 
 	/**
@@ -51,16 +59,24 @@ public class RepositorioProdutoArrayList {
 	 * @return
 	 */
 	public boolean existe(int codigo) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		int indice = 0;
+		boolean achou = false;
+		while(!achou && indice < produtos.size()) {
+			if(produtos.get(indice).getCodigo() == codigo) {
+				achou = true;
+			}
+			indice += 1;
+		}
+		return achou;
+		//throw new UnsupportedOperationException("Not implemented yet!");
 	}
 
 	/**
 	 * Insere um novo produto (sem se preocupar com duplicatas)
 	 */
 	public void inserir(Produto produto) {
-		// TODO Implement your code here
-		throw new UnsupportedOperationException("Not implemented yet!");
+		produtos.add(produto);
+		//throw new UnsupportedOperationException("Not implemented yet!");
 	}
 
 	/**
@@ -69,7 +85,16 @@ public class RepositorioProdutoArrayList {
 	 * utilizado.
 	 */
 	public void atualizar(Produto produto) {
-		// TODO Implement your code here
+		int codigo = produto.getCodigo();
+		int indice = 0;
+		boolean achou = false;
+		while(!achou && indice < produtos.size()) {
+			if(produtos.get(indice).getCodigo() == codigo) {
+				achou = true;
+			}
+			indice += 1;
+		}
+		//PAREI AQUIIII
 		throw new UnsupportedOperationException("Not implemented yet!");
 	}
 
